@@ -19,7 +19,7 @@ class App extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    if ( !this.state.newTodoDescription) { return }
+    if ( !this.state.newTodoDescription ) { return }
     const newTodo = { description: this.state.newTodoDescription, isComplete: false};
     this.setState({ todos: [...this.state.todos, newTodo], newTodoDescription: '' });
   }
@@ -45,6 +45,5 @@ class App extends Component {
        </div>
     );
   }
-}
 
 export default App;
