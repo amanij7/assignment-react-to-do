@@ -6,7 +6,7 @@ class ToDo extends Component {
     return (
       <li>
          <input type="checkbox" checked={ this.props.isCompleted } onChange={ this.props.toggleComplete} />
-         <button> Delete </button>
+         <button onClick={delete}> Delete </button>
          <span>{ this.props.description }</span>
        </li>
     );
