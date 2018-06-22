@@ -29,7 +29,7 @@ class App extends Component {
     todo.isCompleted = todo.isCompleted ? false : true;
     this.setState({ todos: todos});
   }
-  }
+
   render() {
      return (
        <div className="App">
@@ -45,5 +45,6 @@ class App extends Component {
        </div>
     );
   }
+}
 
 export default App;
