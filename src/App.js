@@ -5,12 +5,13 @@ import ToDo from './components/ToDo.js';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state= {
       todos: [
         { description: 'Walk the cat', isCompleted: true},
         { description: 'Throw the dishes away', isCompleted: false},
         { description: 'Buy new dishes', isCompleted: false}
       ],
+
       newTodoDescription: ''
     };
   }
@@ -30,12 +31,16 @@ class App extends Component {
     this.setState({ todos: todos});
   }
 
+  deleteTodo (index){
+    this.setState({ todos: todos})
+  }
+
   render() {
      return (
        <div className="App">
          <ul>
            { this.state.todos.map( (todo, index) =>
-             <ToDo key={index} scoobyDoo={todo.description} isCompleted={todo.isCompleted} toggleComplete={ () => this.toggleComplete(index) } />
+             <ToDo key={index} description={todo.description} isCompleted={todo.isCompleted} toggleComplete={ () => this.toggleComplete(index) } deleteToDo={this.deleteTodo} />
            )}
          </ul>
          <form onSubmit={ (e) => this.handleSubmit(e) }>
